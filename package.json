@@ -1,0 +1,19 @@
+{
+  "name": "hollaback",
+  "version": "1.0.0",
+  "description": "Resolves a promise when a host/port is ready",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leebenson/hollaback.git"
+  },
+  "author": "Lee Benson <lee@leebenson.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leebenson/hollaback/issues"
+  },
+  "homepage": "https://github.com/leebenson/hollaback#readme"
+}
