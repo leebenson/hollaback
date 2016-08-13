@@ -49,7 +49,7 @@ const hosts = [
 (async function whenReady(){
   await hollaback(...hosts);
   // Our services are ready - go nuts...
-  
+
 }());
 
 ```
@@ -74,7 +74,7 @@ hollaback(hosts, {
 
 ## Compatibility
 
-Designed for Node 5 and above.
+Designed for Node 0.12.15 and above.
 
 It won't work in a browser.
 
