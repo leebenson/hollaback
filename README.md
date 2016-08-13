@@ -1,8 +1,6 @@
 # Hollaback
 
-## Note: WIP. Check back in a few days!
-
-#### Resolves a Promise when a host/port is ready
+#### Resolves a Promise when host(s)/port(s) are ready
 
 If your app needs to wait for database connections, microservices or other stuff being available first, holla' has your back.
 
@@ -62,17 +60,25 @@ Pass either a list of `host:port` strings or an array of them, and hollaback wil
 
 Under the hood, it uses [Socket](https://nodejs.org/api/net.html#net_class_net_socket) to probe a host/port.
 
-By default, retries occur every *500ms* until the port is available, and times out after *60 seconds*.
+By default, retries occur every *500ms* until the port is available, and times out after *30 seconds*.
 
-You can override the defaults with:
+You can override the defaults by passing an options object as the last param:
 
 ```
-hollaback(..., {
-  retry: 250, // retry every, in ms
-  timeout: 30 * 1000 // timeout and throw, in ms
+hollaback(hosts, {
+    retry: 500, // per connection retry (in ms)
+    timeout: 30 * 1000, // global timeout (rejects after this time, in ms)
+    socketTimeout: 1000, // per connection timeout (in ms)
 })
 ```
 
+## Compatibility
+
+Designed for Node 5 and above.
+
+## Testing
+
+Run `npm run test`
 
 ## License
 

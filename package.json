@@ -1,10 +1,22 @@
 {
   "name": "hollaback",
-  "version": "1.0.0",
-  "description": "Resolves a promise when a host/port is ready",
-  "main": "index.js",
+  "version": "1.0.1",
+  "description": "Resolves a Promise when host(s)/port(s) are ready",
+  "keywords": [
+    "netcat",
+    "nmap",
+    "wait",
+    "ready",
+    "promise",
+    "host",
+    "hosts",
+    "port",
+    "ports"
+  ],
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha --compilers js:babel-register",
+    "prepublish": "./node_modules/.bin/babel -d dist src"
   },
   "repository": {
     "type": "git",
@@ -15,5 +27,22 @@
   "bugs": {
     "url": "https://github.com/leebenson/hollaback/issues"
   },
-  "homepage": "https://github.com/leebenson/hollaback#readme"
+  "homepage": "https://github.com/leebenson/hollaback#readme",
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "babel-plugin-transform-async-to-generator": "^6.8.0",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-node5": "^11.1.0",
+    "babel-preset-node6": "^11.0.0",
+    "babel-preset-stage-1": "^6.13.0",
+    "babel-register": "^6.11.6",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.3.0",
+    "get-port": "^2.1.0",
+    "mocha": "^3.0.2"
+  },
+  "dependencies": {
+    "delay": "^1.3.1"
+  }
 }
