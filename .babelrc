@@ -1,9 +1,11 @@
 {
   "presets": [
-    "node6"
+    "es2015",
+    "stage-0"
   ],
   "plugins": [
-    "babel-plugin-transform-async-to-generator",
-    "babel-plugin-syntax-async-functions"
+    "transform-async-to-generator",
+    "syntax-async-functions",
+    "transform-runtime"
   ]
 }

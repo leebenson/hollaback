@@ -1,3 +1,11 @@
+v1.1.0
+----------------------------------------
+* Uses `module.exports` instead of `export default`, to create an implicit default on `require()` statements
+* Targets lower Node.js versions as well as 6+
+* Cleans up babel plugin names in `.babelrc`
+* Adds `syntax-async-functions` to `.babelrc`
+* Adds Tonic example file
+
 v1.0.2
 ----------------------------------------
 * Fixes minor README typo and adds 'Fair warning' section

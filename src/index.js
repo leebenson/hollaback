@@ -2,10 +2,11 @@ import net from 'net';
 import delay from 'delay';
 
 // Recursively flatten an array
-function recursiveFlatten (arr, res=[]) {
+function recursiveFlatten(arr, res=[]) {
   for (const val of arr) {
     (Array.isArray(val) && recursiveFlatten(val, res)) || res.push(val);
   }
+
   return res;
 }
 
@@ -35,7 +36,7 @@ async function handleConnect(opt) {
         client.setTimeout(opt.options.socketTimeout);
 
         // Error handler - catch and ignore
-        client.on('error', function() {});
+        client.on('error', function () {});
 
         // Retry after a delay...
         await delay(opt.options.retry);
@@ -44,7 +45,7 @@ async function handleConnect(opt) {
   ]);
 }
 
-export default async function hollaback(...args) {
+module.exports = async function hollaback(...args) {
 
   // Promises to resolve
   const promises = [];
@@ -79,4 +80,4 @@ export default async function hollaback(...args) {
 
   // Resolve once all of the promises are ready to go
   return Promise.all(promises);
-}
+};
