@@ -1,6 +1,6 @@
 {
   "name": "hollaback",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Resolves a Promise when host(s)/port(s) are ready",
   "keywords": [
     "netcat",
@@ -8,10 +8,16 @@
     "wait",
     "ready",
     "promise",
+    "docker",
+    "docker compose",
     "host",
     "hosts",
     "port",
-    "ports"
+    "ports",
+    "stack",
+    "orchestration",
+    "services",
+    "microservices"
   ],
   "main": "dist/index.js",
   "scripts": {
