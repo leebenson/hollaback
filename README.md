@@ -6,7 +6,7 @@ If your app needs to wait for database connections, microservices or other stuff
 
 You can use it like this (assuming async/await in Node.js):
 
-```
+```js
 # ... inside an async function
 await hollaback(
   'web-host:80',
@@ -26,9 +26,9 @@ Hollaback is it.
 
 ## Usage
 
-Without hipster ES6/7 stuff:
+ES5/commonjs:
 
-```
+```js
 const hollaback = require('hollaback');
 
 hollaback('host1:port', 'host2:port').then(function () {
@@ -36,9 +36,9 @@ hollaback('host1:port', 'host2:port').then(function () {
 });
 ```
 
-For cool kids:
+ES6/ES7/ESM
 
-```
+```js
 import hollaback from 'hollaback'
 
 const hosts = [
@@ -64,7 +64,7 @@ By default, retries occur every *500ms* until the port is available, and hollaba
 
 You can override the defaults by passing an options object as the last param:
 
-```
+```js
 hollaback(hosts, {
     retry: 500, // per connection retry (in ms)
     timeout: 30 * 1000, // global timeout (rejects after this time, in ms)
